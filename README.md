@@ -1,4 +1,4 @@
-# Search Images React App
+# Video Show React App
 
 this app is to search about videos and show it using youtube API
 
