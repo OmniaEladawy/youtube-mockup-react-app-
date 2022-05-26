@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import SearchBar from './Components/SearchBar';
+import youtube from './apis/youtube';
+import VideoList from './Components/VideoList';
+import VideoDetail from './Components/VideoDetail';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {list : [] , video: null};
+
+  componentDidMount(){
+    this.onSearchTerm("cars");
+  }
+
+  onSearchTerm = async (term) =>{
+    const response = await youtube.get('/search',{
+      params:{
+        q: term
+      }
+    }
+   )
+   this.setState({
+    list : response.data.items,
+    video : response.data.items[0]
+  })
+  }
+
+  onVideoSelect = (vid) =>{
+    this.setState({video : vid});
+  }
+
+  render(){
+    return (
+      <div className='ui container'>
+          <SearchBar searchTerm={this.onSearchTerm} />
+          <div className='ui grid'>
+            <div className='ui row'>
+              <div className='ten wide column'>
+                <VideoDetail video={this.state.video}/>
+              </div>
+              <div className='six wide column'>
+                <VideoList onVideoSelect={this.onVideoSelect}  videoList={this.state.list} />
+              </div>              
+            </div>
+          </div>
+      </div>
+    );
+  } 
 }
 
 export default App;
