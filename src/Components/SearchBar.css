@@ -4,3 +4,7 @@ label{
     margin-bottom: 10px;
     display: block
 }
+
+.search-bar{
+    margin: 15px 0 !important;
+}

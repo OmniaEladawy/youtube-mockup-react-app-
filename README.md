@@ -1,6 +1,6 @@
 # Video Show React App
 
-this app is to search about videos and show it using youtube API
+this app is to search about videos and show it using youtube API and react hooks
 
 ### Run :
 
