@@ -12,3 +12,6 @@ npm install
 npm start
 
 ```
+
+### Live preview :
+https://extraordinary-lokum-35f24b.netlify.app/
