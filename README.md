@@ -1,14 +1,21 @@
 # Video Show React App
 
-this app is to search about videos and show it using youtube API and react hooks
+This app is to search about videos and show it using youtube API and react hooks
 
-### Run :
+- **Live Demo:** [https://youtube-mockup.netlify.app/](https://youtube-mockup.netlify.app/)
 
-To run the project just run this commands in your terminal
+## Installation
 
+Clone the repository, change directories, and use NPM to install the dependencies.
+
+```bash
+$ git clone https://github.com/OmniaEladawy/youtube-mockup-react-app-.git
+$ cd video_show
+$ npm install
 ```
-npm install
 
-npm start
+## Usage
 
-```
+The project can be run with
+
+- `npm start`

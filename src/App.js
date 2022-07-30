@@ -10,7 +10,7 @@ const App = () => {
   const [video,setVideo] = useState(null);
 
   useEffect(()=>{
-    onSearchTerm("cars")
+    onSearchTerm("web development")
   },[])
 
   const onSearchTerm = async (term) =>{
